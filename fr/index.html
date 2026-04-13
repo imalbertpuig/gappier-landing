@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Gappier — Apprends l'anglais avec YouTube | Fill-in-the-gap avec du contenu réel</title>
+  <meta name="description" content="Entraîne-toi en anglais avec n'importe quelle vidéo YouTube : vlogs, tech, actualités, cuisine. Complète les blancs des sous-titres en temps réel. Gratuit, sans inscription." />
+  <link rel="canonical" href="https://gappier.app/fr/" />
+
+  <link rel="alternate" hreflang="en" href="https://gappier.app/" />
+  <link rel="alternate" hreflang="es" href="https://gappier.app/es/" />
+  <link rel="alternate" hreflang="fr" href="https://gappier.app/fr/" />
+  <link rel="alternate" hreflang="it" href="https://gappier.app/it/" />
+  <link rel="alternate" hreflang="pt" href="https://gappier.app/pt/" />
+  <link rel="alternate" hreflang="de" href="https://gappier.app/de/" />
+  <link rel="alternate" hreflang="pl" href="https://gappier.app/pl/" />
+  <link rel="alternate" hreflang="tr" href="https://gappier.app/tr/" />
+  <link rel="alternate" hreflang="vi" href="https://gappier.app/vi/" />
+  <link rel="alternate" hreflang="x-default" href="https://gappier.app/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://gappier.app/fr/" />
+  <meta property="og:title" content="Gappier — Apprends l'anglais avec n'importe quelle vidéo YouTube" />
+  <meta property="og:description" content="Colle l'URL d'une vidéo YouTube et entraîne-toi à compléter les sous-titres en temps réel. Gratuit, sans inscription." />
+  <meta property="og:image" content="https://gappier.app/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Gappier — Apprends l'anglais avec YouTube" />
+  <meta name="twitter:description" content="Fill-in-the-gap avec de vrais sous-titres. N'importe quelle vidéo YouTube, gratuit, sans compte." />
+  <meta name="twitter:image" content="https://gappier.app/og-image.png" />
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: { animation: { 'gradient-shift': 'gradient-shift 4s ease infinite' }, keyframes: { 'gradient-shift': { '0%, 100%': { backgroundPosition: '0% 50%' }, '50%': { backgroundPosition: '100% 50%' } } } } }
+    }
+  </script>
+  <style>
+    .gradient-text { background: linear-gradient(90deg, #6366f1, #a855f7, #ec4899, #6366f1); background-size: 300% auto; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; animation: gradient-shift 4s ease infinite; }
+    @keyframes gradient-shift { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+    .chalk { background: linear-gradient(104deg, transparent 0.9%, rgba(253,224,71,.55) 2.4%, rgba(253,224,71,.55) 97.9%, transparent 99%); background-repeat: no-repeat; background-size: 100% 55%; background-position: 0 85%; padding: 0 3px; }
+    .card-hover { transition: transform .2s ease, box-shadow .2s ease; }
+    .card-hover:hover { transform: translateY(-2px); box-shadow: 0 12px 32px -8px rgba(99,102,241,.25); }
+    .input-glow:focus { box-shadow: 0 0 0 3px rgba(99,102,241,.2); }
+    details summary::-webkit-details-marker { display: none; }
+  </style>
+</head>
+
+<body class="bg-white text-gray-900 antialiased">
+
+  <header class="w-full border-b border-gray-100 bg-white/80 backdrop-blur-sm sticky top-0 z-50">
+    <div class="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between">
+      <a href="/fr/" class="flex items-center gap-2.5" aria-label="Gappier — accueil">
+        <svg width="32" height="32" viewBox="40 40 420 420" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs><linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" /><stop offset="50%" style="stop-color:#a855f7;stop-opacity:1" /><stop offset="100%" style="stop-color:#06b6d4;stop-opacity:1" /></linearGradient></defs>
+          <path d="M400 150C375 100 320 70 250 70C150 70 70 150 70 250C70 350 150 430 250 430C350 430 430 350 430 250H360" stroke="url(#logo-grad)" stroke-width="55" stroke-linecap="round" fill="none" />
+          <path d="M202 205H172V295H202" stroke="url(#logo-grad)" stroke-width="32" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+          <path d="M258 205H288V295H258" stroke="url(#logo-grad)" stroke-width="32" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+          <path d="M300 250H430" stroke="url(#logo-grad)" stroke-width="45" stroke-linecap="round" fill="none" />
+        </svg>
+        <span class="font-bold text-lg tracking-tight gradient-text">Gappier</span>
+      </a>
+      <div class="flex items-center gap-4">
+        <details class="relative hidden sm:block">
+          <summary class="text-xs font-medium text-gray-500 hover:text-gray-700 cursor-pointer select-none">FR ▾</summary>
+          <nav class="absolute right-0 top-6 w-36 bg-white border border-gray-100 rounded-xl shadow-lg py-1 z-50">
+            <a href="/"    class="block px-4 py-1.5 text-xs text-gray-600 hover:bg-gray-50">English</a>
+            <a href="/es/" class="block px-4 py-1.5 text-xs text-gray-600 hover:bg-gray-50">Español</a>
+            <a href="/fr/" class="block px-4 py-1.5 text-xs font-semibold text-indigo-600 bg-indigo-50">Français</a>
+            <a href="/it/" class="block px-4 py-1.5 text-xs text-gray-600 hover:bg-gray-50">Italiano</a>
+            <a href="/pt/" class="block px-4 py-1.5 text-xs text-gray-600 hover:bg-gray-50">Português</a>
+            <a href="/de/" class="block px-4 py-1.5 text-xs text-gray-600 hover:bg-gray-50">Deutsch</a>
+            <a href="/pl/" class="block px-4 py-1.5 text-xs text-gray-600 hover:bg-gray-50">Polski</a>
+            <a href="/tr/" class="block px-4 py-1.5 text-xs text-gray-600 hover:bg-gray-50">Türkçe</a>
+            <a href="/vi/" class="block px-4 py-1.5 text-xs text-gray-600 hover:bg-gray-50">Tiếng Việt</a>
+          </nav>
+        </details>
+        <a href="https://gappier.web.app" class="text-sm font-medium text-indigo-600 hover:text-indigo-500 transition-colors hidden sm:block">Ouvrir l'app →</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="max-w-5xl mx-auto px-4 pt-20 pb-24 text-center" aria-labelledby="hero-heading">
+      <p class="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-widest text-indigo-600 bg-indigo-50 rounded-full px-3 py-1 mb-6"><span aria-hidden="true">✦</span> Fill-in-the-gap avec YouTube</p>
+      <h1 id="hero-heading" class="text-4xl sm:text-6xl font-extrabold leading-tight tracking-tight mb-6">
+        Apprends l'anglais avec<br /><span class="gradient-text">du contenu réel</span>
+      </h1>
+      <p class="text-lg sm:text-xl text-gray-500 max-w-2xl mx-auto mb-10 leading-relaxed">
+        Colle l'URL de n'importe quelle vidéo YouTube — un vlog de voyage, une conférence tech, un journal TV —
+        et entraîne-toi à compléter les sous-titres en temps réel.
+        <strong class="text-gray-700">Gratuit. Sans inscription. Sans limites.</strong>
+      </p>
+      <div class="max-w-xl mx-auto">
+        <form id="hero-form" novalidate aria-label="Rechercher une vidéo YouTube">
+          <div class="flex gap-2 items-start">
+            <div class="flex-1">
+              <label for="yt-url" class="sr-only">URL YouTube</label>
+              <input id="yt-url" type="url" name="url" inputmode="url" autocomplete="off"
+                placeholder="https://www.youtube.com/watch?v=..."
+                class="input-glow w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 placeholder-gray-400 focus:border-indigo-500 focus:outline-none transition-colors"
+                aria-describedby="url-error" aria-invalid="false" />
+              <p id="url-error" role="alert" class="mt-1.5 text-xs text-red-500 hidden text-left"></p>
+            </div>
+            <button type="submit" aria-label="Commencer à pratiquer" class="shrink-0 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white p-3 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6" aria-hidden="true"><path d="M8 5.14v14l11-7-11-7z" /></svg>
+            </button>
+          </div>
+        </form>
+        <p class="mt-4 text-xs text-gray-400">
+          Ou essaie directement →
+          <a href="https://gappier.web.app/difficulty/YnZMH8GTFK0" class="text-indigo-500 hover:text-indigo-600 font-medium transition-colors underline underline-offset-2">Friends S1E1</a>
+          · <a href="https://gappier.web.app/difficulty/lC5lsemxaJo" class="text-indigo-500 hover:text-indigo-600 font-medium transition-colors underline underline-offset-2">The Office</a>
+        </p>
+      </div>
+    </section>
+
+    <section class="bg-gray-50 py-20" aria-labelledby="features-heading">
+      <div class="max-w-5xl mx-auto px-4">
+        <h2 id="features-heading" class="sr-only">Pourquoi Gappier</h2>
+        <div class="grid sm:grid-cols-3 gap-6">
+          <article class="card-hover bg-white rounded-2xl p-6 border border-gray-100">
+            <div class="w-11 h-11 rounded-xl bg-indigo-50 flex items-center justify-center mb-4" aria-hidden="true"><svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" /><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></div>
+            <h3 class="font-bold text-gray-900 mb-2">Du contenu qui t'intéresse vraiment</h3>
+            <p class="text-sm text-gray-500 leading-relaxed">Fini les audios fabriqués. Utilise des vlogs, documentaires, podcasts, séries ou chaînes tech. L'anglais que parlent les natifs, pas celui des manuels scolaires.</p>
+          </article>
+          <article class="card-hover bg-white rounded-2xl p-6 border border-gray-100">
+            <div class="w-11 h-11 rounded-xl bg-purple-50 flex items-center justify-center mb-4" aria-hidden="true"><svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg></div>
+            <h3 class="font-bold text-gray-900 mb-2">100% gratuit, sans conditions</h3>
+            <p class="text-sm text-gray-500 leading-relaxed">Pas d'abonnement, pas de compte, pas de limite quotidienne. Ouvre ton navigateur, colle l'URL et entraîne-toi. C'est aussi simple que ça.</p>
+          </article>
+          <article class="card-hover bg-white rounded-2xl p-6 border border-gray-100">
+            <div class="w-11 h-11 rounded-xl bg-pink-50 flex items-center justify-center mb-4" aria-hidden="true"><svg class="w-6 h-6 text-pink-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg></div>
+            <h3 class="font-bold text-gray-900 mb-2">Transcription instantanée</h3>
+            <p class="text-sm text-gray-500 leading-relaxed">On extrait les sous-titres automatiquement et on génère l'exercice en quelques secondes. Sans installation, sans configuration. Fonctionne sur n'importe quel appareil.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-5xl mx-auto px-4 py-20" aria-labelledby="how-heading">
+      <div class="text-center mb-12"><h2 id="how-heading" class="text-3xl font-extrabold tracking-tight text-gray-900">Trois étapes. Pas d'excuses.</h2></div>
+      <ol class="grid sm:grid-cols-3 gap-8" role="list">
+        <li class="flex flex-col items-center text-center gap-3">
+          <span class="w-10 h-10 rounded-full bg-indigo-600 text-white font-bold flex items-center justify-center text-sm shrink-0" aria-hidden="true">1</span>
+          <h3 class="font-semibold text-gray-900">Choisis ta vidéo</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">N'importe quelle vidéo YouTube avec des sous-titres en anglais. Un épisode de ta série, un tutoriel de programmation, un TED Talk.</p>
+        </li>
+        <li class="flex flex-col items-center text-center gap-3">
+          <span class="w-10 h-10 rounded-full bg-purple-600 text-white font-bold flex items-center justify-center text-sm shrink-0" aria-hidden="true">2</span>
+          <h3 class="font-semibold text-gray-900">Sélectionne la difficulté</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">Contrôle quel pourcentage de mots sont masqués. Commence facile et monte le niveau au fur et à mesure.</p>
+        </li>
+        <li class="flex flex-col items-center text-center gap-3">
+          <span class="w-10 h-10 rounded-full bg-pink-600 text-white font-bold flex items-center justify-center text-sm shrink-0" aria-hidden="true">3</span>
+          <h3 class="font-semibold text-gray-900">Complète les blancs</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">La vidéo se lance. Tu écoutes et tu tapes les mots manquants en synchronisation avec l'audio.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="bg-gray-50 py-20" aria-labelledby="use-cases-heading">
+      <div class="max-w-5xl mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 id="use-cases-heading" class="text-3xl font-extrabold tracking-tight text-gray-900 mb-3">Apprends l'anglais en faisant ce que tu fais déjà</h2>
+          <p class="text-gray-500 max-w-xl mx-auto">Pas besoin de changer tes habitudes. Utilise le contenu que tu regardes déjà et transforme-le en pratique réelle.</p>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <article class="card-hover bg-white rounded-2xl p-5 border border-gray-100"><p class="text-2xl mb-3" aria-hidden="true">👨‍🍳</p><h3 class="font-bold text-gray-900 mb-1 text-sm">Cuisine en anglais</h3><p class="text-xs text-gray-500 leading-relaxed">Suis Binging with Babish ou Tasty. Vocabulaire culinaire réel en contexte : techniques, ingrédients, mesures impériales.</p></article>
+          <article class="card-hover bg-white rounded-2xl p-5 border border-gray-100"><p class="text-2xl mb-3" aria-hidden="true">💻</p><h3 class="font-bold text-gray-900 mb-1 text-sm">Tech et programmation</h3><p class="text-xs text-gray-500 leading-relaxed">Fireship, Theo, ThePrimeagen. L'anglais technique dont tu as besoin pour comprendre docs, issues et code reviews en équipes internationales.</p></article>
+          <article class="card-hover bg-white rounded-2xl p-5 border border-gray-100"><p class="text-2xl mb-3" aria-hidden="true">📰</p><h3 class="font-bold text-gray-900 mb-1 text-sm">Actualités</h3><p class="text-xs text-gray-500 leading-relaxed">BBC News, DW English, CNBC. Compréhension de l'anglais formel et journalistique pour suivre les débats mondiaux.</p></article>
+          <article class="card-hover bg-white rounded-2xl p-5 border border-gray-100"><p class="text-2xl mb-3" aria-hidden="true">🎙️</p><h3 class="font-bold text-gray-900 mb-1 text-sm">Podcasts et interviews</h3><p class="text-xs text-gray-500 leading-relaxed">Lex Fridman, How I Built This. Anglais conversationnel réel à vitesse naturelle, sans intonation artificielle.</p></article>
+          <article class="card-hover bg-white rounded-2xl p-5 border border-gray-100"><p class="text-2xl mb-3" aria-hidden="true">🎬</p><h3 class="font-bold text-gray-900 mb-1 text-sm">Séries et films</h3><p class="text-xs text-gray-500 leading-relaxed">Friends, The Office, Modern Family. Humour, expressions idiomatiques et vocabulaire quotidien que les manuels n'enseignent jamais.</p></article>
+          <article class="card-hover bg-white rounded-2xl p-5 border border-gray-100"><p class="text-2xl mb-3" aria-hidden="true">✈️</p><h3 class="font-bold text-gray-900 mb-1 text-sm">Vlogs de voyage</h3><p class="text-xs text-gray-500 leading-relaxed">Mark Wiens, Kara and Nate. Anglais informel et culturel mêlé au vocabulaire du voyage et des situations du quotidien.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-5xl mx-auto px-4 py-24 text-center" aria-labelledby="cta-heading">
+      <div class="max-w-2xl mx-auto">
+        <div class="flex justify-center mb-6" aria-hidden="true">
+          <svg width="56" height="56" viewBox="40 40 420 420" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="cta-grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" /><stop offset="50%" style="stop-color:#a855f7;stop-opacity:1" /><stop offset="100%" style="stop-color:#06b6d4;stop-opacity:1" /></linearGradient></defs><path d="M400 150C375 100 320 70 250 70C150 70 70 150 70 250C70 350 150 430 250 430C350 430 430 350 430 250H360" stroke="url(#cta-grad)" stroke-width="55" stroke-linecap="round" fill="none" /><path d="M202 205H172V295H202" stroke="url(#cta-grad)" stroke-width="32" stroke-linecap="round" stroke-linejoin="round" fill="none" /><path d="M258 205H288V295H258" stroke="url(#cta-grad)" stroke-width="32" stroke-linecap="round" stroke-linejoin="round" fill="none" /><path d="M300 250H430" stroke="url(#cta-grad)" stroke-width="45" stroke-linecap="round" fill="none" /></svg>
+        </div>
+        <h2 id="cta-heading" class="text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900 mb-4">Ton anglais s'améliore à chaque <span class="chalk">épisode</span></h2>
+        <p class="text-gray-500 mb-8 leading-relaxed">Pas d'app à installer. Pas de carte bancaire. Ouvre l'app et colle n'importe quelle URL YouTube.</p>
+        <a href="https://gappier.web.app" class="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold px-8 py-4 rounded-xl transition-colors text-base focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+          Commencer à pratiquer gratuitement
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5" aria-hidden="true"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd" /></svg>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-gray-100 py-8">
+    <div class="max-w-5xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-400">
+      <p>© 2025 Gappier. Fait avec <span aria-label="amour">♥</span> pour les apprenants d'anglais.</p>
+      <p>Non affilié à YouTube ou Google. Les sous-titres appartiennent à leurs auteurs respectifs.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      'use strict';
+      function extractVideoId(url) {
+        try {
+          const parsed = new URL(url.trim());
+          const hostname = parsed.hostname.replace(/^www\./, '');
+          if (hostname === 'youtube.com' || hostname === 'm.youtube.com') {
+            const v = parsed.searchParams.get('v');
+            if (v) return v;
+            const parts = parsed.pathname.split('/').filter(Boolean);
+            if (['live','embed','shorts','v'].includes(parts[0])) return parts[1] || null;
+          }
+          if (hostname === 'youtu.be') return parsed.pathname.slice(1) || null;
+        } catch (_) {}
+        return null;
+      }
+      const form = document.getElementById('hero-form');
+      const input = document.getElementById('yt-url');
+      const errorEl = document.getElementById('url-error');
+      function showError(msg) { errorEl.textContent = msg; errorEl.classList.remove('hidden'); input.setAttribute('aria-invalid','true'); input.focus(); }
+      function clearError() { errorEl.textContent = ''; errorEl.classList.add('hidden'); input.setAttribute('aria-invalid','false'); }
+      input.addEventListener('input', clearError);
+      form.addEventListener('submit', function (e) {
+        e.preventDefault(); clearError();
+        const url = input.value.trim();
+        if (!url) { showError('Colle une URL YouTube pour commencer.'); return; }
+        const videoId = extractVideoId(url);
+        if (!videoId) { showError("URL invalide. Assure-toi que c'est un lien YouTube."); return; }
+        window.location.href = 'https://gappier.web.app/difficulty/' + encodeURIComponent(videoId);
+      });
+      document.addEventListener('click', function(e) {
+        document.querySelectorAll('details[open]').forEach(function(d) { if (!d.contains(e.target)) d.removeAttribute('open'); });
+      });
+    })();
+  </script>
+
+</body>
+</html>
