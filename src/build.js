@@ -5,6 +5,7 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..');
+const DIST = path.join(ROOT, 'dist');
 const template = fs.readFileSync(path.join(__dirname, 'template.html'), 'utf8');
 const translations = JSON.parse(fs.readFileSync(path.join(__dirname, 'translations.json'), 'utf8'));
 
@@ -68,15 +69,19 @@ function buildPage(langCode) {
 }
 
 function getOutputPath(langCode) {
-  if (langCode === 'en') return path.join(ROOT, 'index.html');
-  return path.join(ROOT, langCode, 'index.html');
+  if (langCode === 'en') return path.join(DIST, 'index.html');
+  return path.join(DIST, langCode, 'index.html');
 }
 
+// Clean and recreate dist/
+if (fs.existsSync(DIST)) fs.rmSync(DIST, { recursive: true });
+fs.mkdirSync(DIST);
+
+// Generate HTML pages
 for (const { code } of LANGUAGES) {
   const html = buildPage(code);
   const dest = getOutputPath(code);
 
-  // Ensure directory exists
   const dir = path.dirname(dest);
   if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
 
@@ -84,4 +89,14 @@ for (const { code } of LANGUAGES) {
   console.log(`  built: ${path.relative(ROOT, dest)}`);
 }
 
-console.log(`\nGenerated ${LANGUAGES.length} pages.`);
+// Copy static assets to dist/
+const STATIC_ASSETS = ['favicon.svg', 'robots.txt', 'sitemap.xml'];
+for (const asset of STATIC_ASSETS) {
+  const src = path.join(ROOT, asset);
+  if (fs.existsSync(src)) {
+    fs.copyFileSync(src, path.join(DIST, asset));
+    console.log(`  copied: ${asset}`);
+  }
+}
+
+console.log(`\nGenerated ${LANGUAGES.length} pages → dist/`);

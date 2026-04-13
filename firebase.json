@@ -1,18 +1,6 @@
 {
   "hosting": {
-    "public": ".",
-    "ignore": [
-      "firebase.json",
-      ".firebaserc",
-      "netlify.toml",
-      "node_modules",
-      "src",
-      "package.json",
-      "package-lock.json",
-      ".gitignore",
-      "README.md",
-      "CHANGELOG.md"
-    ],
+    "public": "dist",
     "rewrites": [
       { "source": "/ca", "destination": "/ca/index.html" },
       { "source": "/es", "destination": "/es/index.html" },
