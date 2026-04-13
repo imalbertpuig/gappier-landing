@@ -52,6 +52,26 @@
     .card-hover:hover { transform: translateY(-2px); box-shadow: 0 12px 32px -8px rgba(99,102,241,.25); }
     .input-glow:focus { box-shadow: 0 0 0 3px rgba(99,102,241,.2); }
     details summary::-webkit-details-marker { display: none; }
+    /* Dark mode — applied via html.dark class, independent of Tailwind CDN */
+    html.dark,
+    html.dark body { background-color: #111827; color: #f3f4f6; }
+    html.dark header { background-color: rgba(17,24,39,.8) !important; border-color: #1f2937 !important; }
+    html.dark .bg-gray-50 { background-color: rgba(31,41,55,.5) !important; }
+    html.dark article, html.dark nav.absolute { background-color: #1f2937 !important; border-color: #374151 !important; }
+    html.dark .text-gray-900 { color: #f9fafb !important; }
+    html.dark .text-gray-700 { color: #d1d5db !important; }
+    html.dark .text-gray-600 { color: #d1d5db !important; }
+    html.dark .text-gray-500 { color: #9ca3af !important; }
+    html.dark .text-gray-400 { color: #6b7280 !important; }
+    html.dark .text-indigo-600 { color: #818cf8 !important; }
+    html.dark .bg-indigo-50, html.dark .bg-indigo-50\/30 { background-color: rgba(67,56,202,.2) !important; }
+    html.dark .bg-purple-50 { background-color: rgba(109,40,217,.2) !important; }
+    html.dark .bg-pink-50 { background-color: rgba(157,23,77,.2) !important; }
+    html.dark input { background-color: #1f2937 !important; color: #f3f4f6 !important; border-color: #4b5563 !important; }
+    html.dark input::placeholder { color: #6b7280 !important; }
+    html.dark footer { border-color: #1f2937 !important; }
+    html.dark footer p { color: #6b7280 !important; }
+    html.dark .text-gray-500.hover\:text-gray-700 { color: #9ca3af !important; }
   </style>
 </head>
 
@@ -255,5 +275,24 @@
     })();
   </script>
 
+
+  <script>
+    (function() {
+      var toggleBtn = document.getElementById('theme-toggle');
+      var iconSun = document.getElementById('icon-sun');
+      var iconMoon = document.getElementById('icon-moon');
+      function applyThemeIcons(isDark) {
+        iconSun.classList.toggle('hidden', !isDark);
+        iconMoon.classList.toggle('hidden', isDark);
+      }
+      applyThemeIcons(document.documentElement.classList.contains('dark'));
+      toggleBtn.addEventListener('click', function() {
+        var isDark = !document.documentElement.classList.contains('dark');
+        document.documentElement.classList.toggle('dark', isDark);
+        localStorage.setItem('gappier_theme', isDark ? 'dark' : 'light');
+        applyThemeIcons(isDark);
+      });
+    })();
+  </script>
 </body>
 </html>
