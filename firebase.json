@@ -1,0 +1,50 @@
+{
+  "hosting": {
+    "public": ".",
+    "ignore": [
+      "firebase.json",
+      ".firebaserc",
+      "netlify.toml",
+      "node_modules",
+      "src",
+      "package.json",
+      "package-lock.json",
+      ".gitignore",
+      "README.md",
+      "CHANGELOG.md"
+    ],
+    "rewrites": [
+      { "source": "/ca", "destination": "/ca/index.html" },
+      { "source": "/es", "destination": "/es/index.html" },
+      { "source": "/fr", "destination": "/fr/index.html" },
+      { "source": "/it", "destination": "/it/index.html" },
+      { "source": "/pt", "destination": "/pt/index.html" },
+      { "source": "/de", "destination": "/de/index.html" },
+      { "source": "/pl", "destination": "/pl/index.html" },
+      { "source": "/tr", "destination": "/tr/index.html" },
+      { "source": "/vi", "destination": "/vi/index.html" }
+    ],
+    "headers": [
+      {
+        "source": "**",
+        "headers": [
+          { "key": "X-Frame-Options", "value": "DENY" },
+          { "key": "X-Content-Type-Options", "value": "nosniff" },
+          { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+        ]
+      },
+      {
+        "source": "*.@(css|js|svg|png|jpg|woff2)",
+        "headers": [
+          { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        ]
+      },
+      {
+        "source": "**/*.html",
+        "headers": [
+          { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+        ]
+      }
+    ]
+  }
+}

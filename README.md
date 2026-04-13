@@ -1,12 +1,12 @@
 # Gappier Landing
 
-Landing page estática de [gappier.app](https://gappier.app). Multiidioma (9 idiomas), dark/light mode, y generación estática de páginas (SSG) a partir de una única plantilla y un fichero de traducciones. Desplegada en Netlify.
+Landing page estática de Gappier. Multiidioma (10 idiomas), dark/light mode, y generación estática de páginas (SSG) a partir de una única plantilla y un fichero de traducciones. Desplegada en Firebase Hosting.
 
 ## Servicios
 
 | Servicio | Uso | URL |
 |---|---|---|
-| **Netlify** | Hosting y deploy continuo desde `main` | [gappier.app](https://gappier.app) |
+| **Firebase Hosting** | Hosting y deploy manual (`npm run deploy`) | [getgappier.web.app](https://getgappier.web.app) |
 | **Gappier App** | Aplicación Angular a la que apunta la landing | [gappier.web.app](https://gappier.web.app) |
 
 ## Requisitos previos
@@ -36,7 +36,11 @@ Ejecuta dos pasos en orden:
 
 ## Deploy
 
-El deploy es automático: cualquier push a `main` dispara el pipeline de Netlify, que ejecuta `npm run build` y publica el directorio raíz.
+```bash
+npm run deploy
+```
+
+Ejecuta `npm run build` y luego `firebase deploy --only hosting`. Requiere tener la Firebase CLI instalada y estar autenticado (`firebase login`).
 
 ## Idiomas
 
@@ -50,6 +54,7 @@ El deploy es automático: cualquier push a `main` dispara el pipeline de Netlify
 | `de` | `/de/` | `de/index.html` |
 | `pl` | `/pl/` | `pl/index.html` |
 | `tr` | `/tr/` | `tr/index.html` |
+| `ca` | `/ca/` | `ca/index.html` |
 | `vi` | `/vi/` | `vi/index.html` |
 
 La detección de idioma se hace en el cliente (primera visita): si el idioma del navegador coincide con alguno de los soportados, el usuario es redirigido automáticamente. La redirección se hace solo una vez por sesión (`sessionStorage`).
@@ -84,14 +89,15 @@ fr/index.html          # Generado por build.js
 ...
 
 styles.css             # Generado por Tailwind CLI
-netlify.toml           # Configuración de Netlify
+firebase.json          # Configuración de Firebase Hosting
+.firebaserc            # Project ID de Firebase
 ```
 
 ## Stack
 
 - HTML5 + Tailwind CSS v4.2.2
 - Node.js (build script, sin framework)
-- Netlify (hosting y CI/CD)
+- Firebase Hosting
 
 ## Pendiente
 

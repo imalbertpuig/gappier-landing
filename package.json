@@ -1,10 +1,11 @@
 {
   "name": "gappier-landing",
   "version": "1.0.0",
-  "description": "Static landing page for gappier.app. HTML + Tailwind CSS v4. Deployed on Netlify.",
+  "description": "Static landing page for Gappier. HTML + Tailwind CSS v4. Deployed on Firebase Hosting.",
   "scripts": {
     "dev": "concurrently \"tailwindcss -i src/input.css -o styles.css --watch\" \"serve . -l 3000\"",
     "build": "node src/build.js && tailwindcss -i src/input.css -o styles.css --minify",
+    "deploy": "npm run build && firebase deploy --only hosting",
     "watch": "tailwindcss -i src/input.css -o styles.css --watch"
   },
   "repository": {
