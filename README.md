@@ -1,51 +1,100 @@
 # Gappier Landing
 
-Landing page estática para [gappier.app](https://gappier.app). HTML + Tailwind CDN, sin build step. Deploy en Netlify.
+Landing page estática de [gappier.app](https://gappier.app). Multiidioma (9 idiomas), dark/light mode, y generación estática de páginas (SSG) a partir de una única plantilla y un fichero de traducciones. Desplegada en Netlify.
 
-## Estructura
+## Servicios
 
-```
-gappier-landing/
-├── index.html        # Landing en inglés (idioma principal)
-├── es/
-│   └── index.html   # Landing en español
-├── favicon.svg
-├── og-image.png      # ⚠️ Pendiente de crear (1200×630px)
-├── robots.txt
-├── sitemap.xml
-└── netlify.toml
-```
+| Servicio | Uso | URL |
+|---|---|---|
+| **Netlify** | Hosting y deploy continuo desde `main` | [gappier.app](https://gappier.app) |
+| **Gappier App** | Aplicación Angular a la que apunta la landing | [gappier.web.app](https://gappier.web.app) |
+
+## Requisitos previos
+
+- Node.js 22 LTS
+- npm
 
 ## Correr en local
 
-No hay build. Solo necesitas un servidor HTTP local (para que la detección de idioma y las rutas `/es/` funcionen correctamente con `sessionStorage` y los paths relativos).
-
 ```bash
-npx serve .
+npm install
+npm run dev
 ```
 
-Abre [http://localhost:3000](http://localhost:3000)
+Esto lanza en paralelo el compilador de Tailwind en modo watch y un servidor estático en `http://localhost:3000`.
 
-> **Nota:** Abrir `index.html` directamente con `file://` en el navegador también funciona para ver el contenido, pero la redirección de idioma no funcionará correctamente porque `window.location.replace('/es/')` requiere un servidor HTTP.
+## Build
 
-## Detección de idioma
+```bash
+npm run build
+```
 
-- Navegador con idioma `es-*` → redirige automáticamente a `/es/`
-- Todos los demás → se quedan en `/` (inglés)
-- La redirección se hace una sola vez por sesión (via `sessionStorage`)
-- El switcher `EN` / `ES` del header permite cambio manual en cualquier momento
+Ejecuta dos pasos en orden:
 
-## Deploy (Netlify)
+1. `node src/build.js` — genera los 9 ficheros HTML estáticos a partir de `src/template.html` y `src/translations.json`.
+2. `tailwindcss -i src/input.css -o styles.css --minify` — compila y minifica los estilos.
 
-El repositorio está configurado para deploy directo en Netlify (`netlify.toml` con `publish = "."`).
+## Deploy
 
-1. Conecta este repositorio en [app.netlify.com](https://app.netlify.com)
-2. Build command: *(dejar vacío)*
-3. Publish directory: `.`
-4. Deploy
+El deploy es automático: cualquier push a `main` dispara el pipeline de Netlify, que ejecuta `npm run build` y publica el directorio raíz.
 
-## Pendiente antes de publicar
+## Idiomas
 
-- [ ] **`og-image.png`** — imagen 1200×630px en el root para previews de redes sociales (Twitter, LinkedIn, WhatsApp)
-- [ ] **Google Search Console** — tras el primer deploy, verificar el dominio y enviar `sitemap.xml` manualmente
-- [ ] **Analytics** — añadir script de [Plausible](https://plausible.io) (1 KB, sin cookies, sin banner GDPR)
+| Código | Ruta | Fichero generado |
+|---|---|---|
+| `en` | `/` | `index.html` |
+| `es` | `/es/` | `es/index.html` |
+| `fr` | `/fr/` | `fr/index.html` |
+| `it` | `/it/` | `it/index.html` |
+| `pt` | `/pt/` | `pt/index.html` |
+| `de` | `/de/` | `de/index.html` |
+| `pl` | `/pl/` | `pl/index.html` |
+| `tr` | `/tr/` | `tr/index.html` |
+| `vi` | `/vi/` | `vi/index.html` |
+
+La detección de idioma se hace en el cliente (primera visita): si el idioma del navegador coincide con alguno de los soportados, el usuario es redirigido automáticamente. La redirección se hace solo una vez por sesión (`sessionStorage`).
+
+## Añadir o editar contenido
+
+Editar únicamente estos dos ficheros:
+
+- **`src/template.html`** — estructura HTML y estilos. Usa `{{placeholders}}` para el texto traducible.
+- **`src/translations.json`** — textos para los 9 idiomas. Cada idioma tiene las mismas claves.
+
+Después de cualquier cambio, ejecutar `npm run build` para regenerar los HTML.
+
+## Añadir un nuevo idioma
+
+1. Añadir la nueva entrada en `src/translations.json` con todas las claves requeridas.
+2. Añadir el idioma al array `LANGUAGES` en `src/build.js` con su código, etiqueta y ruta.
+3. Ejecutar `npm run build`.
+
+## Estructura del proyecto
+
+```
+src/
+  template.html        # Plantilla HTML única con {{placeholders}}
+  translations.json    # Traducciones de los 9 idiomas
+  build.js             # Script de generación de páginas estáticas
+  input.css            # Entrada de Tailwind CSS v4
+
+index.html             # Generado por build.js (en)
+es/index.html          # Generado por build.js
+fr/index.html          # Generado por build.js
+...
+
+styles.css             # Generado por Tailwind CLI
+netlify.toml           # Configuración de Netlify
+```
+
+## Stack
+
+- HTML5 + Tailwind CSS v4.2.2
+- Node.js (build script, sin framework)
+- Netlify (hosting y CI/CD)
+
+## Pendiente
+
+- [ ] **`og-image.png`** — imagen 1200×630px en el root para previews en redes sociales
+- [ ] **Google Search Console** — verificar dominio y enviar `sitemap.xml` tras el primer deploy
+- [ ] **Analytics** — añadir script de [Plausible](https://plausible.io) (sin cookies, sin banner GDPR)
