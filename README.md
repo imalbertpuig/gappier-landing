@@ -31,8 +31,8 @@ npm run build
 
 Ejecuta dos pasos en orden:
 
-1. `node src/build.js` — genera los 9 ficheros HTML estáticos a partir de `src/template.html` y `src/translations.json`.
-2. `tailwindcss -i src/input.css -o styles.css --minify` — compila y minifica los estilos.
+1. `node src/build.js` — genera los 10 ficheros HTML estáticos a partir de `src/template.html` y `src/translations.json`.
+2. `tailwindcss -i src/input.css -o dist/styles.css --minify` — compila y minifica los estilos.
 
 ## Deploy
 
@@ -64,7 +64,7 @@ La detección de idioma se hace en el cliente (primera visita): si el idioma del
 Editar únicamente estos dos ficheros:
 
 - **`src/template.html`** — estructura HTML y estilos. Usa `{{placeholders}}` para el texto traducible.
-- **`src/translations.json`** — textos para los 9 idiomas. Cada idioma tiene las mismas claves.
+- **`src/translations.json`** — textos para los 10 idiomas. Cada idioma tiene las mismas claves.
 
 Después de cualquier cambio, ejecutar `npm run build` para regenerar los HTML.
 
@@ -79,16 +79,17 @@ Después de cualquier cambio, ejecutar `npm run build` para regenerar los HTML.
 ```
 src/
   template.html        # Plantilla HTML única con {{placeholders}}
-  translations.json    # Traducciones de los 9 idiomas
+  translations.json    # Traducciones de los 10 idiomas
   build.js             # Script de generación de páginas estáticas
   input.css            # Entrada de Tailwind CSS v4
 
-index.html             # Generado por build.js (en)
-es/index.html          # Generado por build.js
-fr/index.html          # Generado por build.js
-...
+dist/                  # Generado por `npm run build` (no versionado)
+  index.html           # Página en inglés
+  ca/index.html
+  es/index.html
+  ...
+  styles.css           # Generado por Tailwind CLI
 
-styles.css             # Generado por Tailwind CLI
 firebase.json          # Configuración de Firebase Hosting
 .firebaserc            # Project ID de Firebase
 ```
