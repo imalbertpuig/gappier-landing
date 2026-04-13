@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="{{htmlLang}}">
 
 <head>
   <meta charset="UTF-8" />
@@ -7,11 +7,11 @@
   <link rel="stylesheet" href="/styles.css" />
 
   <!-- Primary SEO -->
-  <title>Gappier — Ucz się angielskiego z YouTube | Fill-in-the-gap z prawdziwymi treściami</title>
-  <meta name="description" content="Ćwicz angielski z dowolnym filmem z YouTube: vlogi, technologia, wiadomości, gotowanie. Uzupełniaj luki w napisach w czasie rzeczywistym. Bezpłatnie, bez rejestracji." />
+  <title>{{pageTitle}}</title>
+  <meta name="description" content="{{metaDescription}}" />
   <meta name="keywords"
     content="learn english youtube, fill in the gap, english exercises online, interactive subtitles, free english, learn english real videos" />
-  <link rel="canonical" href="https://gappier.app/pl/" />
+  <link rel="canonical" href="{{canonicalUrl}}" />
 
   <!-- Alternate languages -->
   <link rel="alternate" hreflang="en" href="https://gappier.app/" />
@@ -27,15 +27,15 @@
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://gappier.app/pl/" />
-  <meta property="og:title" content="Gappier — Ucz się angielskiego z dowolnym filmem z YouTube" />
-  <meta property="og:description" content="Wklej URL dowolnego filmu z YouTube i ćwicz angielski, uzupełniając luki w napisach. Bezpłatnie, bez rejestracji." />
+  <meta property="og:url" content="{{ogUrl}}" />
+  <meta property="og:title" content="{{ogTitle}}" />
+  <meta property="og:description" content="{{ogDescription}}" />
   <meta property="og:image" content="https://gappier.app/og-image.png" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Gappier — Ucz się angielskiego z YouTube" />
-  <meta name="twitter:description" content="Fill-in-the-gap z prawdziwymi napisami. Dowolny film z YouTube, bezpłatnie, bez konta." />
+  <meta name="twitter:title" content="{{twitterTitle}}" />
+  <meta name="twitter:description" content="{{twitterDescription}}" />
   <meta name="twitter:image" content="https://gappier.app/og-image.png" />
 
   <!-- Favicon -->
@@ -112,7 +112,7 @@
 
   <header class="w-full border-b border-gray-100 dark:border-gray-800 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm sticky top-0 z-50">
     <div class="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between">
-      <a href="/" class="flex items-center gap-2.5" aria-label="Gappier — strona główna">
+      <a href="/" class="flex items-center gap-2.5" aria-label="{{logoAriaLabel}}">
         <svg width="32" height="32" viewBox="40 40 420 420" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <defs>
             <linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -131,17 +131,9 @@
       <div class="flex items-center gap-4">
         <!-- Language switcher -->
         <details class="relative hidden sm:block">
-          <summary class="text-xs font-medium text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 cursor-pointer select-none">PL ▾</summary>
+          <summary class="text-xs font-medium text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 cursor-pointer select-none">{{langSwitcherLabel}}</summary>
           <nav class="absolute right-0 top-6 w-36 bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-700 rounded-xl shadow-lg py-1 z-50">
-                        <a href="/" class="block px-4 py-1.5 text-xs text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800">English</a>
-            <a href="/es/" class="block px-4 py-1.5 text-xs text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800">Español</a>
-            <a href="/fr/" class="block px-4 py-1.5 text-xs text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800">Français</a>
-            <a href="/it/" class="block px-4 py-1.5 text-xs text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800">Italiano</a>
-            <a href="/pt/" class="block px-4 py-1.5 text-xs text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800">Português</a>
-            <a href="/de/" class="block px-4 py-1.5 text-xs text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800">Deutsch</a>
-            <a href="/pl/" class="block px-4 py-1.5 text-xs font-semibold text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-900/30">Polski</a>
-            <a href="/tr/" class="block px-4 py-1.5 text-xs text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800">Türkçe</a>
-            <a href="/vi/" class="block px-4 py-1.5 text-xs text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800">Tiếng Việt</a>
+            {{langNav}}
           </nav>
         </details>
         <button id="theme-toggle" type="button" aria-label="Toggle theme"
@@ -153,7 +145,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
           </svg>
         </button>
-        <a href="https://gappier.web.app" class="text-sm font-medium text-indigo-600 hover:text-indigo-500 transition-colors hidden sm:block">Otwórz aplikację →</a>
+        <a href="https://gappier.web.app" class="text-sm font-medium text-indigo-600 hover:text-indigo-500 transition-colors hidden sm:block">{{openApp}}</a>
       </div>
     </div>
   </header>
@@ -162,34 +154,34 @@
 
     <section class="max-w-5xl mx-auto px-4 pt-20 pb-24 text-center" aria-labelledby="hero-heading">
       <p class="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-widest text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-900/30 rounded-full px-3 py-1 mb-6">
-        <span aria-hidden="true">✦</span> Fill-in-the-gap z YouTube
+        <span aria-hidden="true">✦</span> {{heroBadge}}
       </p>
       <h1 id="hero-heading" class="text-4xl sm:text-6xl font-extrabold leading-tight tracking-tight mb-6">
-        Ucz się angielskiego<br /><span class="gradient-text">z prawdziwymi treściami</span>
+        {{heroH1Line1}}<br /><span class="gradient-text">{{heroH1Gradient}}</span>
       </h1>
       <p class="text-lg sm:text-xl text-gray-500 dark:text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-        Wklej URL dowolnego filmu z YouTube — vlog podróżniczy, talk technologiczny, serwis informacyjny — i ćwicz uzupełnianie luk w napisach w czasie rzeczywistym.
-        <strong class="text-gray-700 dark:text-gray-300">Za darmo. Bez rejestracji. Bez limitów.</strong>
+        {{heroDescription}}
+        <strong class="text-gray-700 dark:text-gray-300">{{heroStrong}}</strong>
       </p>
       <div class="max-w-xl mx-auto">
-        <form id="hero-form" novalidate aria-label="Fill-in-the-gap z YouTube">
+        <form id="hero-form" novalidate aria-label="{{heroBadge}}">
           <div class="flex gap-2 items-start">
             <div class="flex-1">
-              <label for="yt-url" class="sr-only">URL YouTube</label>
+              <label for="yt-url" class="sr-only">{{urlInputAriaLabel}}</label>
               <input id="yt-url" type="url" name="url" inputmode="url" autocomplete="off"
-                placeholder="https://www.youtube.com/watch?v=..."
+                placeholder="{{urlPlaceholder}}"
                 class="input-glow w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-4 py-3 text-sm text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 focus:border-indigo-500 dark:focus:border-indigo-400 focus:outline-none transition-colors"
                 aria-describedby="url-error" aria-invalid="false" />
               <p id="url-error" role="alert" class="mt-1.5 text-xs text-red-500 hidden text-left"></p>
             </div>
-            <button type="submit" aria-label="Zacznij ćwiczyć"
+            <button type="submit" aria-label="{{btnStartAriaLabel}}"
               class="shrink-0 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white p-3 transition-colors cursor-pointer focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6" aria-hidden="true"><path d="M8 5.14v14l11-7-11-7z" /></svg>
             </button>
           </div>
         </form>
         <p class="mt-4 text-xs text-gray-400">
-          Lub spróbuj od razu →
+          {{orTryDirectly}}
           <a href="https://gappier.web.app/difficulty/YnZMH8GTFK0" class="text-indigo-500 hover:text-indigo-600 font-medium transition-colors underline underline-offset-2">Friends S1E1</a>
           ·
           <a href="https://gappier.web.app/difficulty/lC5lsemxaJo" class="text-indigo-500 hover:text-indigo-600 font-medium transition-colors underline underline-offset-2">The Office</a>
@@ -199,28 +191,28 @@
 
     <section class="bg-gray-50 dark:bg-gray-800/40 py-20" aria-labelledby="features-heading">
       <div class="max-w-5xl mx-auto px-4">
-        <h2 id="features-heading" class="sr-only">Dlaczego Gappier</h2>
+        <h2 id="features-heading" class="sr-only">{{featuresHeading}}</h2>
         <div class="grid sm:grid-cols-3 gap-6">
           <article class="card-hover bg-white dark:bg-gray-800 rounded-2xl p-6 border border-gray-100 dark:border-gray-700">
             <div class="w-11 h-11 rounded-xl bg-indigo-50 dark:bg-indigo-900/30 flex items-center justify-center mb-4" aria-hidden="true">
               <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" /><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
             </div>
-            <h3 class="font-bold text-gray-900 dark:text-white mb-2">Treści, które naprawdę lubisz</h3>
-            <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">Koniec ze sztucznymi nagraniami. Używaj vlogów, dokumentów, podcastów, seriali lub kanałów technologicznych. Angielski, którym mówią native speakerzy — nie ten z podręczników.</p>
+            <h3 class="font-bold text-gray-900 dark:text-white mb-2">{{feat1Title}}</h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">{{feat1Desc}}</p>
           </article>
           <article class="card-hover bg-white dark:bg-gray-800 rounded-2xl p-6 border border-gray-100 dark:border-gray-700">
             <div class="w-11 h-11 rounded-xl bg-purple-50 dark:bg-purple-900/30 flex items-center justify-center mb-4" aria-hidden="true">
               <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
             </div>
-            <h3 class="font-bold text-gray-900 dark:text-white mb-2">100% za darmo, bez ukrytych kosztów</h3>
-            <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">Bez subskrypcji, bez konta, bez dziennych limitów. Otwórz przeglądarkę, wklej URL i ćwicz. Takie to proste.</p>
+            <h3 class="font-bold text-gray-900 dark:text-white mb-2">{{feat2Title}}</h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">{{feat2Desc}}</p>
           </article>
           <article class="card-hover bg-white dark:bg-gray-800 rounded-2xl p-6 border border-gray-100 dark:border-gray-700">
             <div class="w-11 h-11 rounded-xl bg-pink-50 dark:bg-pink-900/30 flex items-center justify-center mb-4" aria-hidden="true">
               <svg class="w-6 h-6 text-pink-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
             </div>
-            <h3 class="font-bold text-gray-900 dark:text-white mb-2">Natychmiastowa transkrypcja</h3>
-            <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">Automatycznie pobieramy napisy i generujemy ćwiczenie w kilka sekund. Bez instalacji, bez konfiguracji. Działa na każdym urządzeniu.</p>
+            <h3 class="font-bold text-gray-900 dark:text-white mb-2">{{feat3Title}}</h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">{{feat3Desc}}</p>
           </article>
         </div>
       </div>
@@ -228,23 +220,23 @@
 
     <section class="max-w-5xl mx-auto px-4 py-20" aria-labelledby="how-heading">
       <div class="text-center mb-12">
-        <h2 id="how-heading" class="text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">Trzy kroki. Żadnych wymówek.</h2>
+        <h2 id="how-heading" class="text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">{{howHeading}}</h2>
       </div>
       <ol class="grid sm:grid-cols-3 gap-8" role="list">
         <li class="flex flex-col items-center text-center gap-3">
           <span class="w-10 h-10 rounded-full bg-indigo-600 text-white font-bold flex items-center justify-center text-sm shrink-0" aria-hidden="true">1</span>
-          <h3 class="font-semibold text-gray-900 dark:text-white">Wybierz film</h3>
-          <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">Dowolny film z YouTube z angielskimi napisami. Odcinek serialu, tutorial programowania, TED Talk — twój wybór.</p>
+          <h3 class="font-semibold text-gray-900 dark:text-white">{{step1Title}}</h3>
+          <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">{{step1Desc}}</p>
         </li>
         <li class="flex flex-col items-center text-center gap-3">
           <span class="w-10 h-10 rounded-full bg-purple-600 text-white font-bold flex items-center justify-center text-sm shrink-0" aria-hidden="true">2</span>
-          <h3 class="font-semibold text-gray-900 dark:text-white">Wybierz poziom trudności</h3>
-          <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">Kontroluj, ile procent słów jest ukrytych. Zacznij łatwo i podnoś poziom w miarę postępów.</p>
+          <h3 class="font-semibold text-gray-900 dark:text-white">{{step2Title}}</h3>
+          <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">{{step2Desc}}</p>
         </li>
         <li class="flex flex-col items-center text-center gap-3">
           <span class="w-10 h-10 rounded-full bg-pink-600 text-white font-bold flex items-center justify-center text-sm shrink-0" aria-hidden="true">3</span>
-          <h3 class="font-semibold text-gray-900 dark:text-white">Uzupełnij luki</h3>
-          <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">Film jest odtwarzany. Słuchasz i wpisujesz brakujące słowa w synchronizacji z dźwiękiem.</p>
+          <h3 class="font-semibold text-gray-900 dark:text-white">{{step3Title}}</h3>
+          <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">{{step3Desc}}</p>
         </li>
       </ol>
     </section>
@@ -252,39 +244,39 @@
     <section class="bg-gray-50 dark:bg-gray-800/40 py-20" aria-labelledby="use-cases-heading">
       <div class="max-w-5xl mx-auto px-4">
         <div class="text-center mb-12">
-          <h2 id="use-cases-heading" class="text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white mb-3">Ucz się angielskiego, robiąc to, co już robisz</h2>
-          <p class="text-gray-500 dark:text-gray-400 max-w-xl mx-auto">Nie musisz zmieniać swoich nawyków. Używaj treści, które już oglądasz, i zamień je w prawdziwą praktykę.</p>
+          <h2 id="use-cases-heading" class="text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white mb-3">{{usecasesHeading}}</h2>
+          <p class="text-gray-500 dark:text-gray-400 max-w-xl mx-auto">{{usecasesSubtitle}}</p>
         </div>
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           <article class="card-hover bg-white dark:bg-gray-800 rounded-2xl p-5 border border-gray-100 dark:border-gray-700">
             <p class="text-2xl mb-3" aria-hidden="true">👨‍🍳</p>
-            <h3 class="font-bold text-gray-900 dark:text-white mb-1 text-sm">Gotowanie po angielsku</h3>
-            <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">Śledź Binging with Babish lub Tasty. Prawdziwe słownictwo kulinarne w kontekście: techniki, składniki, miary imperialne.</p>
+            <h3 class="font-bold text-gray-900 dark:text-white mb-1 text-sm">{{uc1Title}}</h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">{{uc1Desc}}</p>
           </article>
           <article class="card-hover bg-white dark:bg-gray-800 rounded-2xl p-5 border border-gray-100 dark:border-gray-700">
             <p class="text-2xl mb-3" aria-hidden="true">💻</p>
-            <h3 class="font-bold text-gray-900 dark:text-white mb-1 text-sm">Technologia i programowanie</h3>
-            <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">Fireship, Theo, ThePrimeagen. Techniczny angielski, którego potrzebujesz do dokumentacji, issues i code review w międzynarodowych zespołach.</p>
+            <h3 class="font-bold text-gray-900 dark:text-white mb-1 text-sm">{{uc2Title}}</h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">{{uc2Desc}}</p>
           </article>
           <article class="card-hover bg-white dark:bg-gray-800 rounded-2xl p-5 border border-gray-100 dark:border-gray-700">
             <p class="text-2xl mb-3" aria-hidden="true">📰</p>
-            <h3 class="font-bold text-gray-900 dark:text-white mb-1 text-sm">Wiadomości i aktualności</h3>
-            <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">BBC News, DW English, CNBC. Rozumienie formalnego i dziennikarskiego angielskiego, by śledzić globalne debaty.</p>
+            <h3 class="font-bold text-gray-900 dark:text-white mb-1 text-sm">{{uc3Title}}</h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">{{uc3Desc}}</p>
           </article>
           <article class="card-hover bg-white dark:bg-gray-800 rounded-2xl p-5 border border-gray-100 dark:border-gray-700">
             <p class="text-2xl mb-3" aria-hidden="true">🎙️</p>
-            <h3 class="font-bold text-gray-900 dark:text-white mb-1 text-sm">Podcasty i wywiady</h3>
-            <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">Lex Fridman, How I Built This. Prawdziwy angielski konwersacyjny w naturalnym tempie, bez sztucznej intonacji.</p>
+            <h3 class="font-bold text-gray-900 dark:text-white mb-1 text-sm">{{uc4Title}}</h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">{{uc4Desc}}</p>
           </article>
           <article class="card-hover bg-white dark:bg-gray-800 rounded-2xl p-5 border border-gray-100 dark:border-gray-700">
             <p class="text-2xl mb-3" aria-hidden="true">🎬</p>
-            <h3 class="font-bold text-gray-900 dark:text-white mb-1 text-sm">Seriale i filmy</h3>
-            <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">Friends, The Office, Modern Family. Humor, idiomy i słownictwo codzienne, którego podręczniki nigdy nie uczą.</p>
+            <h3 class="font-bold text-gray-900 dark:text-white mb-1 text-sm">{{uc5Title}}</h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">{{uc5Desc}}</p>
           </article>
           <article class="card-hover bg-white dark:bg-gray-800 rounded-2xl p-5 border border-gray-100 dark:border-gray-700">
             <p class="text-2xl mb-3" aria-hidden="true">✈️</p>
-            <h3 class="font-bold text-gray-900 dark:text-white mb-1 text-sm">Vlogi podróżnicze</h3>
-            <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">Mark Wiens, Kara and Nate. Nieformalny i kulturowy angielski ze słownictwem podróżniczym i codziennymi sytuacjami.</p>
+            <h3 class="font-bold text-gray-900 dark:text-white mb-1 text-sm">{{uc6Title}}</h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">{{uc6Desc}}</p>
           </article>
         </div>
       </div>
@@ -308,12 +300,12 @@
           </svg>
         </div>
         <h2 id="cta-heading" class="text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white mb-4">
-          Twój angielski poprawia się z każdym <span class="chalk">odcinkiem</span>
+          {{ctaHeading_before}}<span class="chalk">{{ctaChalkWord}}</span>{{ctaHeading_after}}
         </h2>
-        <p class="text-gray-500 dark:text-gray-400 mb-8 leading-relaxed">Żadnych aplikacji do zainstalowania. Żadnej karty kredytowej. Otwórz aplikację i wklej dowolny URL z YouTube.</p>
+        <p class="text-gray-500 dark:text-gray-400 mb-8 leading-relaxed">{{ctaSubtext}}</p>
         <a href="https://gappier.web.app"
           class="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold px-8 py-4 rounded-xl transition-colors text-base focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
-          Zacznij ćwiczyć za darmo
+          {{ctaButton}}
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5" aria-hidden="true"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd" /></svg>
         </a>
       </div>
@@ -323,8 +315,8 @@
 
   <footer class="border-t border-gray-100 dark:border-gray-800 py-8">
     <div class="max-w-5xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-400 dark:text-gray-500">
-      <p>© 2025 Gappier. Zrobione z ♥ dla uczących się angielskiego.</p>
-      <p>Niezwiązany z YouTube ani Google. Napisy należą do ich odpowiednich autorów.</p>
+      <p>{{footerCopyright}}</p>
+      <p>{{footerDisclaimer}}</p>
     </div>
   </footer>
 
@@ -354,9 +346,9 @@
       form.addEventListener('submit', function (e) {
         e.preventDefault(); clearError();
         const url = input.value.trim();
-        if (!url) { showError('Wklej URL YouTube, aby zacząć.'); return; }
+        if (!url) { showError('{{urlErrorEmpty}}'); return; }
         const videoId = extractVideoId(url);
-        if (!videoId) { showError('Nieprawidłowy URL. Upewnij się, że to link YouTube.'); return; }
+        if (!videoId) { showError('{{urlErrorInvalid}}'); return; }
         window.location.href = 'https://gappier.web.app/difficulty/' + encodeURIComponent(videoId);
       });
 

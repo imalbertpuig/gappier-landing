@@ -4,7 +4,7 @@
   "description": "Static landing page for gappier.app. HTML + Tailwind CSS v4. Deployed on Netlify.",
   "scripts": {
     "dev": "concurrently \"tailwindcss -i src/input.css -o styles.css --watch\" \"serve . -l 3000\"",
-    "build": "tailwindcss -i src/input.css -o styles.css --minify",
+    "build": "node src/build.js && tailwindcss -i src/input.css -o styles.css --minify",
     "watch": "tailwindcss -i src/input.css -o styles.css --watch"
   },
   "repository": {
