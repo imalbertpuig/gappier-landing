@@ -15,6 +15,7 @@
 
   <!-- Alternate languages -->
   <link rel="alternate" hreflang="en" href="https://gappier.app/" />
+  <link rel="alternate" hreflang="ca" href="https://gappier.app/ca/" />
   <link rel="alternate" hreflang="es" href="https://gappier.app/es/" />
   <link rel="alternate" hreflang="fr" href="https://gappier.app/fr/" />
   <link rel="alternate" hreflang="it" href="https://gappier.app/it/" />
@@ -100,7 +101,7 @@
         sessionStorage.setItem(key, '1');
         var lang = (navigator.languages && navigator.languages[0]) || navigator.language || '';
         var code = lang.toLowerCase().split('-')[0];
-        var map = { es:'/es/', fr:'/fr/', it:'/it/', pt:'/pt/', de:'/de/', pl:'/pl/', tr:'/tr/', vi:'/vi/' };
+        var map = { ca:'/ca/', es:'/es/', fr:'/fr/', it:'/it/', pt:'/pt/', de:'/de/', pl:'/pl/', tr:'/tr/', vi:'/vi/' };
         var target = map[code];
         if (target) window.location.replace(target);
       }

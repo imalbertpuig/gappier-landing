@@ -10,6 +10,7 @@ const translations = JSON.parse(fs.readFileSync(path.join(__dirname, 'translatio
 
 const LANGUAGES = [
   { code: 'en', label: 'English',     url: '/' },
+  { code: 'ca', label: 'Català',      url: '/ca/' },
   { code: 'es', label: 'Español',     url: '/es/' },
   { code: 'fr', label: 'Français',    url: '/fr/' },
   { code: 'it', label: 'Italiano',    url: '/it/' },
