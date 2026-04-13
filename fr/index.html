@@ -32,13 +32,14 @@
 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-  <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    tailwind.config = {
+    tailwind = { config: {
       darkMode: 'class',
       theme: { extend: { animation: { 'gradient-shift': 'gradient-shift 4s ease infinite' }, keyframes: { 'gradient-shift': { '0%, 100%': { backgroundPosition: '0% 50%' }, '50%': { backgroundPosition: '100% 50%' } } } } }
     }
+    }
   </script>
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
     .gradient-text { background: linear-gradient(90deg, #6366f1, #a855f7, #ec4899, #6366f1); background-size: 300% auto; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; animation: gradient-shift 4s ease infinite; }
     @keyframes gradient-shift { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
