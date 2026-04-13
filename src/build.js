@@ -90,7 +90,7 @@ for (const { code } of LANGUAGES) {
 }
 
 // Copy static assets to dist/
-const STATIC_ASSETS = ['favicon.svg', 'og-image.png', 'robots.txt', 'sitemap.xml'];
+const STATIC_ASSETS = ['favicon.svg', 'og-image.png', 'robots.txt', 'sitemap.xml', 'googlebb0ee2a5551035cd.html'];
 for (const asset of STATIC_ASSETS) {
   const src = path.join(ROOT, asset);
   if (fs.existsSync(src)) {
