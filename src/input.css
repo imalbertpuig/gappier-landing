@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+/* Scan all HTML files for classes */
+@source "../*.html";
+@source "../**/*.html";
+
+/* Class-based dark mode: applies when <html> has .dark */
+@custom-variant dark (&:where(.dark, .dark *));

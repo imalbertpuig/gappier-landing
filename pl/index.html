@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/styles.css" />
 
   <title>Gappier — Ucz się angielskiego z YouTube | Fill-in-the-gap z prawdziwymi treściami</title>
   <meta name="description" content="Ćwicz angielski z dowolnym filmem z YouTube: vlogi, technologia, wiadomości, gotowanie. Uzupełniaj luki w napisach w czasie rzeczywistym. Bezpłatnie, bez rejestracji." />
@@ -31,15 +32,6 @@
   <meta name="twitter:image" content="https://gappier.app/og-image.png" />
 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-
-  <script>
-    tailwind = { config: {
-      darkMode: 'class',
-      theme: { extend: { animation: { 'gradient-shift': 'gradient-shift 4s ease infinite' }, keyframes: { 'gradient-shift': { '0%, 100%': { backgroundPosition: '0% 50%' }, '50%': { backgroundPosition: '100% 50%' } } } } }
-    }
-    }
-  </script>
-  <script src="https://cdn.tailwindcss.com"></script>
   <style>
     .gradient-text { background: linear-gradient(90deg, #6366f1, #a855f7, #ec4899, #6366f1); background-size: 300% auto; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; animation: gradient-shift 4s ease infinite; }
     @keyframes gradient-shift { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
@@ -48,26 +40,6 @@
     .card-hover:hover { transform: translateY(-2px); box-shadow: 0 12px 32px -8px rgba(99,102,241,.25); }
     .input-glow:focus { box-shadow: 0 0 0 3px rgba(99,102,241,.2); }
     details summary::-webkit-details-marker { display: none; }
-    /* Dark mode — applied via html.dark class, independent of Tailwind CDN */
-    html.dark,
-    html.dark body { background-color: #111827; color: #f3f4f6; }
-    html.dark header { background-color: rgba(17,24,39,.8) !important; border-color: #1f2937 !important; }
-    html.dark .bg-gray-50 { background-color: rgba(31,41,55,.5) !important; }
-    html.dark article, html.dark nav.absolute { background-color: #1f2937 !important; border-color: #374151 !important; }
-    html.dark .text-gray-900 { color: #f9fafb !important; }
-    html.dark .text-gray-700 { color: #d1d5db !important; }
-    html.dark .text-gray-600 { color: #d1d5db !important; }
-    html.dark .text-gray-500 { color: #9ca3af !important; }
-    html.dark .text-gray-400 { color: #6b7280 !important; }
-    html.dark .text-indigo-600 { color: #818cf8 !important; }
-    html.dark .bg-indigo-50, html.dark .bg-indigo-50\/30 { background-color: rgba(67,56,202,.2) !important; }
-    html.dark .bg-purple-50 { background-color: rgba(109,40,217,.2) !important; }
-    html.dark .bg-pink-50 { background-color: rgba(157,23,77,.2) !important; }
-    html.dark input { background-color: #1f2937 !important; color: #f3f4f6 !important; border-color: #4b5563 !important; }
-    html.dark input::placeholder { color: #6b7280 !important; }
-    html.dark footer { border-color: #1f2937 !important; }
-    html.dark footer p { color: #6b7280 !important; }
-    html.dark .text-gray-500.hover\:text-gray-700 { color: #9ca3af !important; }
   </style>
 </head>
 

@@ -1,0 +1,27 @@
+{
+  "name": "gappier-landing",
+  "version": "1.0.0",
+  "description": "Static landing page for gappier.app. HTML + Tailwind CSS v4. Deployed on Netlify.",
+  "scripts": {
+    "dev": "concurrently \"tailwindcss -i src/input.css -o styles.css --watch\" \"serve . -l 3000\"",
+    "build": "tailwindcss -i src/input.css -o styles.css --minify",
+    "watch": "tailwindcss -i src/input.css -o styles.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imalbertpuig/gappier-landing.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/imalbertpuig/gappier-landing/issues"
+  },
+  "homepage": "https://github.com/imalbertpuig/gappier-landing#readme",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.2.2",
+    "concurrently": "^9.2.1",
+    "serve": "^14.2.6",
+    "tailwindcss": "^4.2.2"
+  }
+}
