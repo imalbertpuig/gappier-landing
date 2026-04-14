@@ -21,7 +21,7 @@ npm install
 npm run dev
 ```
 
-Esto lanza en paralelo el compilador de Tailwind en modo watch y un servidor estático en `http://localhost:3000`.
+Genera primero los HTML estáticos y luego lanza en paralelo el compilador de Tailwind en modo watch y un servidor estático en `http://localhost:3000`.
 
 ## Build
 

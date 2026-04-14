@@ -6,6 +6,25 @@ El formato sigue [Keep a Changelog](https://keepachangelog.com/es/1.0.0/).
 
 ---
 
+## [1.1.0] — 2026-04-14
+
+### Added
+
+- `og-image.png` — imagen 1200×630px para previews en redes sociales
+- Google Search Console — fichero de verificación añadido al pipeline de build
+- Google Analytics 4 (G-JKMXVNCQS5)
+
+### Fixed
+
+- URLs actualizadas de `gappier.app` a `getgappier.web.app` en canonical, og:url, hreflang, sitemap y robots.txt
+- Catalán añadido al sitemap con su bloque `<url>` y hreflang en todos los idiomas
+- Selector de idioma visible en móvil (antes oculto con `hidden sm:block`)
+- Placeholder del input de URL traducido a cada idioma
+- `Content-Type: application/xml` explícito para `sitemap.xml`
+- `npm run dev` ahora genera los HTML antes de arrancar el servidor
+
+---
+
 ## [1.0.0] — 2026-04-13
 
 ### Added
