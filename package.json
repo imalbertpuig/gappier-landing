@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Static landing page for Gappier. HTML + Tailwind CSS v4. Deployed on Firebase Hosting.",
   "scripts": {
-    "dev": "concurrently \"tailwindcss -i src/input.css -o dist/styles.css --watch\" \"serve dist -l 3000\"",
+    "dev": "node src/build.js && concurrently \"tailwindcss -i src/input.css -o dist/styles.css --watch\" \"serve dist -l 3000\"",
     "build": "node src/build.js && tailwindcss -i src/input.css -o dist/styles.css --minify",
     "deploy": "npm run build && firebase deploy --only hosting",
     "watch": "tailwindcss -i src/input.css -o dist/styles.css --watch"
